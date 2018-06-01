@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, WeatherHandlerDelegate {
 
+    
+    // MARK: - Class variables
+    let weatherHandler = WeatherAPIHandler()
+    var weatherArray: [WeatherInfo] = []
+    var userLocation:CLLocationCoordinate2D?
+    
+    // MARK: - controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "Weather broadcast"
+        weatherHandler.delegate = self
+        weatherHandler.getResultsFromAPI(location: userLocation!)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(addTapped))
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +32,11 @@ class WeatherViewController: UIViewController {
     }
     
 
+    @objc func addTapped() {
+        weatherHandler.getResultsFromAPI(location: userLocation!)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -45,6 +45,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         }
         else if segue.identifier == "WeatherSegue" {
             print("WeatherSegue")
+            let destinationVC = segue.destination as! WeatherViewController
+            destinationVC.userLocation = userLocation
         }
     }
     

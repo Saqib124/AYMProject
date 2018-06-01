@@ -152,6 +152,7 @@
                                     <outlet property="locationLabel" destination="NL9-lZ-2Wl" id="Sso-1s-rV0"/>
                                     <outlet property="nameLabel" destination="aax-hv-eWQ" id="Ock-Jw-dqJ"/>
                                     <outlet property="perviewImage" destination="MHe-ac-9bM" id="wN8-2w-4wg"/>
+                                    <outlet property="rateLabel" destination="d1Q-j8-wD0" id="ajN-vp-rjg"/>
                                     <outlet property="rateView" destination="4su-8D-CZ0" id="VOU-xt-5cf"/>
                                     <outlet property="typeLabel" destination="wFZ-Yo-HUH" id="Cx9-tM-y9M"/>
                                     <outlet property="viewsLabel" destination="Ivm-gu-f3h" id="NPL-IW-G6q"/>
