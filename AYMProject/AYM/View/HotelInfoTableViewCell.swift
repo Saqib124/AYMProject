@@ -14,6 +14,7 @@ class HotelInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var perviewImage: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var viewsLabel: UILabel!
+    @IBOutlet weak var rateView: RateStarView!
     
     
     func configure(hotel: HotelInfo) {
@@ -21,7 +22,8 @@ class HotelInfoTableViewCell: UITableViewCell {
         locationLabel.text = hotel.location
         typeLabel.text = hotel.type
         viewsLabel.text = "\(hotel.noOfView) views"
-        perviewImage.imageFromServerURL(urlString: hotel.imageUrl)        
+        perviewImage.imageFromServerURL(urlString: hotel.imageUrl)
+        rateView.rating = Int(hotel.rating)
     }
     
 
