@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0B469E2ADAA3AD3411DCF9B4 /* Pods_AYMProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B64925529AA4F0D7BCE95A3 /* Pods_AYMProject.framework */; };
+		9E6C24CB20C1CA3E003C85C0 /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24C920C1CA3E003C85C0 /* AlamofireHelper.swift */; };
+		9E6C24CC20C1CA3E003C85C0 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24CA20C1CA3E003C85C0 /* UIImageViewExtension.swift */; };
+		9E6C24D320C1CAE2003C85C0 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24D220C1CAE2003C85C0 /* WeatherViewController.swift */; };
+		9E6C24D720C1CB13003C85C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24D620C1CB13003C85C0 /* MainViewController.swift */; };
+		9E6C24D920C1CDC2003C85C0 /* HotelListTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24D820C1CDC2003C85C0 /* HotelListTableTableViewController.swift */; };
 		9EBE9F7720C1C53900A32121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7620C1C53900A32121 /* AppDelegate.swift */; };
-		9EBE9F7920C1C53900A32121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7820C1C53900A32121 /* ViewController.swift */; };
 		9EBE9F7C20C1C53900A32121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7A20C1C53900A32121 /* Main.storyboard */; };
 		9EBE9F7E20C1C53A00A32121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7D20C1C53A00A32121 /* Assets.xcassets */; };
 		9EBE9F8120C1C53A00A32121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7F20C1C53A00A32121 /* LaunchScreen.storyboard */; };
@@ -18,9 +22,13 @@
 /* Begin PBXFileReference section */
 		2B64925529AA4F0D7BCE95A3 /* Pods_AYMProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AYMProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35AFA80C9323445E975E284A /* Pods-AYMProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYMProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AYMProject/Pods-AYMProject.release.xcconfig"; sourceTree = "<group>"; };
+		9E6C24C920C1CA3E003C85C0 /* AlamofireHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
+		9E6C24CA20C1CA3E003C85C0 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		9E6C24D220C1CAE2003C85C0 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		9E6C24D620C1CB13003C85C0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9E6C24D820C1CDC2003C85C0 /* HotelListTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListTableTableViewController.swift; sourceTree = "<group>"; };
 		9EBE9F7320C1C53900A32121 /* AYMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AYMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBE9F7620C1C53900A32121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9EBE9F7820C1C53900A32121 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9EBE9F7B20C1C53900A32121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EBE9F7D20C1C53A00A32121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EBE9F8020C1C53A00A32121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +65,57 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9E6C24C820C1CA21003C85C0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9E6C24C920C1CA3E003C85C0 /* AlamofireHelper.swift */,
+				9E6C24CA20C1CA3E003C85C0 /* UIImageViewExtension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		9E6C24CD20C1CA5C003C85C0 /* AYM */ = {
+			isa = PBXGroup;
+			children = (
+				9E6C24D120C1CABD003C85C0 /* Controller */,
+				9E6C24D020C1CAB4003C85C0 /* View */,
+				9E6C24CF20C1CA95003C85C0 /* Model */,
+				9E6C24CE20C1CA86003C85C0 /* ModelView */,
+			);
+			path = AYM;
+			sourceTree = "<group>";
+		};
+		9E6C24CE20C1CA86003C85C0 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		9E6C24CF20C1CA95003C85C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9E6C24D020C1CAB4003C85C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9E6C24D120C1CABD003C85C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9E6C24D220C1CAE2003C85C0 /* WeatherViewController.swift */,
+				9E6C24D620C1CB13003C85C0 /* MainViewController.swift */,
+				9E6C24D820C1CDC2003C85C0 /* HotelListTableTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9EBE9F6A20C1C53900A32121 = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +137,9 @@
 		9EBE9F7520C1C53900A32121 /* AYMProject */ = {
 			isa = PBXGroup;
 			children = (
+				9E6C24CD20C1CA5C003C85C0 /* AYM */,
+				9E6C24C820C1CA21003C85C0 /* Helper */,
 				9EBE9F7620C1C53900A32121 /* AppDelegate.swift */,
-				9EBE9F7820C1C53900A32121 /* ViewController.swift */,
 				9EBE9F7A20C1C53900A32121 /* Main.storyboard */,
 				9EBE9F7D20C1C53A00A32121 /* Assets.xcassets */,
 				9EBE9F7F20C1C53A00A32121 /* LaunchScreen.storyboard */,
@@ -202,7 +262,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EBE9F7920C1C53900A32121 /* ViewController.swift in Sources */,
+				9E6C24D720C1CB13003C85C0 /* MainViewController.swift in Sources */,
+				9E6C24D920C1CDC2003C85C0 /* HotelListTableTableViewController.swift in Sources */,
+				9E6C24D320C1CAE2003C85C0 /* WeatherViewController.swift in Sources */,
+				9E6C24CB20C1CA3E003C85C0 /* AlamofireHelper.swift in Sources */,
+				9E6C24CC20C1CA3E003C85C0 /* UIImageViewExtension.swift in Sources */,
 				9EBE9F7720C1C53900A32121 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
