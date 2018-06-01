@@ -17,6 +17,7 @@ class HotelListTableViewController: UITableViewController, HotelHandlerDelegate 
     let hotelHandler = HotelAPIHandler()
     var userLocation:CLLocationCoordinate2D?
     
+    @IBOutlet weak var tableview: UITableView!
     // MARK: - controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,8 @@ class HotelListTableViewController: UITableViewController, HotelHandlerDelegate 
         
         hotelHandler.delegate = self
         hotelHandler.getResultsFromAPI(location: userLocation!)
-        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(addTapped))
         navigationController?.navigationBar.barTintColor = UIColor.init(red: 64/255, green: 119/255, blue: 182/255, alpha: 1.0)
         
@@ -48,9 +50,9 @@ class HotelListTableViewController: UITableViewController, HotelHandlerDelegate 
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath ) -> CGFloat{
-        return 100.0
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath ) -> CGFloat{
+//        return 100.0
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
