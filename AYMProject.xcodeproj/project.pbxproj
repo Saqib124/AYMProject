@@ -15,6 +15,9 @@
 		9E6C24D920C1CDC2003C85C0 /* HotelListTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24D820C1CDC2003C85C0 /* HotelListTableTableViewController.swift */; };
 		9E6C24DB20C1CEA1003C85C0 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24DA20C1CEA1003C85C0 /* WeatherInfo.swift */; };
 		9E6C24DD20C1CEC1003C85C0 /* HotelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24DC20C1CEC1003C85C0 /* HotelInfo.swift */; };
+		9E6C24DF20C1D1FC003C85C0 /* HotelAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24DE20C1D1FC003C85C0 /* HotelAPIHandler.swift */; };
+		9E6C24E120C1D24C003C85C0 /* WeatherAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24E020C1D24C003C85C0 /* WeatherAPIHandler.swift */; };
+		9E6C24E320C1D308003C85C0 /* MainViewLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24E220C1D308003C85C0 /* MainViewLocationDelegate.swift */; };
 		9EBE9F7720C1C53900A32121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7620C1C53900A32121 /* AppDelegate.swift */; };
 		9EBE9F7C20C1C53900A32121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7A20C1C53900A32121 /* Main.storyboard */; };
 		9EBE9F7E20C1C53A00A32121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7D20C1C53A00A32121 /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		9E6C24D820C1CDC2003C85C0 /* HotelListTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelListTableTableViewController.swift; sourceTree = "<group>"; };
 		9E6C24DA20C1CEA1003C85C0 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherInfo.swift; path = Model/WeatherInfo.swift; sourceTree = "<group>"; };
 		9E6C24DC20C1CEC1003C85C0 /* HotelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotelInfo.swift; path = Model/HotelInfo.swift; sourceTree = "<group>"; };
+		9E6C24DE20C1D1FC003C85C0 /* HotelAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAPIHandler.swift; sourceTree = "<group>"; };
+		9E6C24E020C1D24C003C85C0 /* WeatherAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIHandler.swift; sourceTree = "<group>"; };
+		9E6C24E220C1D308003C85C0 /* MainViewLocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewLocationDelegate.swift; sourceTree = "<group>"; };
 		9EBE9F7320C1C53900A32121 /* AYMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AYMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBE9F7620C1C53900A32121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EBE9F7B20C1C53900A32121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 		9E6C24CE20C1CA86003C85C0 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				9E6C24DE20C1D1FC003C85C0 /* HotelAPIHandler.swift */,
+				9E6C24E020C1D24C003C85C0 /* WeatherAPIHandler.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 				9E6C24D220C1CAE2003C85C0 /* WeatherViewController.swift */,
 				9E6C24D620C1CB13003C85C0 /* MainViewController.swift */,
 				9E6C24D820C1CDC2003C85C0 /* HotelListTableTableViewController.swift */,
+				9E6C24E220C1D308003C85C0 /* MainViewLocationDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6C24E120C1D24C003C85C0 /* WeatherAPIHandler.swift in Sources */,
+				9E6C24DF20C1D1FC003C85C0 /* HotelAPIHandler.swift in Sources */,
 				9E6C24DB20C1CEA1003C85C0 /* WeatherInfo.swift in Sources */,
 				9E6C24D720C1CB13003C85C0 /* MainViewController.swift in Sources */,
 				9E6C24DD20C1CEC1003C85C0 /* HotelInfo.swift in Sources */,
@@ -276,6 +287,7 @@
 				9E6C24CB20C1CA3E003C85C0 /* AlamofireHelper.swift in Sources */,
 				9E6C24CC20C1CA3E003C85C0 /* UIImageViewExtension.swift in Sources */,
 				9EBE9F7720C1C53900A32121 /* AppDelegate.swift in Sources */,
+				9E6C24E320C1D308003C85C0 /* MainViewLocationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

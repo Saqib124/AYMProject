@@ -39,15 +39,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Hotel Info"/>
                                 <connections>
-                                    <segue destination="u0x-Ge-UIF" kind="show" id="G2I-5v-it2"/>
+                                    <action selector="hotelInfoButtonClicked:" destination="J8o-1y-2fE" eventType="touchUpInside" id="6gC-H3-NjP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdi-7n-99A">
-                                <rect key="frame" x="107" y="218" width="88" height="30"/>
+                                <rect key="frame" x="133" y="213" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Weather Info"/>
                                 <connections>
-                                    <segue destination="BWa-u4-1IZ" kind="show" id="IgO-BN-PDS"/>
+                                    <action selector="weatherInfoButtonClicked:" destination="J8o-1y-2fE" eventType="touchUpInside" id="caz-5U-aTV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,6 +55,10 @@
                         <viewLayoutGuide key="safeArea" id="vf4-hr-vQN"/>
                     </view>
                     <navigationItem key="navigationItem" id="NJa-lb-bZq"/>
+                    <connections>
+                        <segue destination="u0x-Ge-UIF" kind="show" identifier="RestSegue" id="znK-n2-yt1"/>
+                        <segue destination="BWa-u4-1IZ" kind="show" identifier="WeatherSegue" id="yhn-JI-viZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhC-8o-EfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
