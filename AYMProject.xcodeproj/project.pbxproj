@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B469E2ADAA3AD3411DCF9B4 /* Pods_AYMProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B64925529AA4F0D7BCE95A3 /* Pods_AYMProject.framework */; };
 		9EBE9F7720C1C53900A32121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7620C1C53900A32121 /* AppDelegate.swift */; };
 		9EBE9F7920C1C53900A32121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7820C1C53900A32121 /* ViewController.swift */; };
 		9EBE9F7C20C1C53900A32121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7A20C1C53900A32121 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B64925529AA4F0D7BCE95A3 /* Pods_AYMProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AYMProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35AFA80C9323445E975E284A /* Pods-AYMProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYMProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AYMProject/Pods-AYMProject.release.xcconfig"; sourceTree = "<group>"; };
 		9EBE9F7320C1C53900A32121 /* AYMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AYMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBE9F7620C1C53900A32121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EBE9F7820C1C53900A32121 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		9EBE9F7D20C1C53A00A32121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EBE9F8020C1C53A00A32121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EBE9F8220C1C53A00A32121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0409384AE971EF8B376956D /* Pods-AYMProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYMProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AYMProject/Pods-AYMProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B469E2ADAA3AD3411DCF9B4 /* Pods_AYMProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CBAF1124DFC487AEFC4BF40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B64925529AA4F0D7BCE95A3 /* Pods_AYMProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A4B4F8E01539EBCF9912EBF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0409384AE971EF8B376956D /* Pods-AYMProject.debug.xcconfig */,
+				35AFA80C9323445E975E284A /* Pods-AYMProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9EBE9F6A20C1C53900A32121 = {
 			isa = PBXGroup;
 			children = (
 				9EBE9F7520C1C53900A32121 /* AYMProject */,
 				9EBE9F7420C1C53900A32121 /* Products */,
+				1A4B4F8E01539EBCF9912EBF /* Pods */,
+				0CBAF1124DFC487AEFC4BF40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EBE9F8520C1C53A00A32121 /* Build configuration list for PBXNativeTarget "AYMProject" */;
 			buildPhases = (
+				0889BAD1448A24A932696B83 /* [CP] Check Pods Manifest.lock */,
 				9EBE9F6F20C1C53900A32121 /* Sources */,
 				9EBE9F7020C1C53900A32121 /* Frameworks */,
 				9EBE9F7120C1C53900A32121 /* Resources */,
+				9B114A40359CBC5A339AFE73 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0889BAD1448A24A932696B83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AYMProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B114A40359CBC5A339AFE73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AYMProject/Pods-AYMProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AYMProject/Pods-AYMProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9EBE9F6F20C1C53900A32121 /* Sources */ = {
@@ -278,6 +345,7 @@
 		};
 		9EBE9F8620C1C53A00A32121 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0409384AE971EF8B376956D /* Pods-AYMProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +363,7 @@
 		};
 		9EBE9F8720C1C53A00A32121 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35AFA80C9323445E975E284A /* Pods-AYMProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
