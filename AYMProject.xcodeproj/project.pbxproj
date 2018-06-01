@@ -23,6 +23,7 @@
 		9E6C24E920C1DACA003C85C0 /* RateStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24E820C1DACA003C85C0 /* RateStarView.swift */; };
 		9E6C24EB20C1E020003C85C0 /* weatherJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C24EA20C1E020003C85C0 /* weatherJSON.txt */; };
 		9E6C24ED20C1E071003C85C0 /* WeatherHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24EC20C1E071003C85C0 /* WeatherHandlerDelegate.swift */; };
+		9E6C24EF20C1E219003C85C0 /* forecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C24EE20C1E219003C85C0 /* forecastCell.swift */; };
 		9EBE9F7720C1C53900A32121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7620C1C53900A32121 /* AppDelegate.swift */; };
 		9EBE9F7C20C1C53900A32121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7A20C1C53900A32121 /* Main.storyboard */; };
 		9EBE9F7E20C1C53A00A32121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE9F7D20C1C53A00A32121 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		9E6C24E820C1DACA003C85C0 /* RateStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateStarView.swift; sourceTree = "<group>"; };
 		9E6C24EA20C1E020003C85C0 /* weatherJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weatherJSON.txt; sourceTree = "<group>"; };
 		9E6C24EC20C1E071003C85C0 /* WeatherHandlerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHandlerDelegate.swift; sourceTree = "<group>"; };
+		9E6C24EE20C1E219003C85C0 /* forecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forecastCell.swift; sourceTree = "<group>"; };
 		9EBE9F7320C1C53900A32121 /* AYMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AYMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBE9F7620C1C53900A32121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EBE9F7B20C1C53900A32121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				9E6C24E620C1D843003C85C0 /* HotelInfoTableViewCell.swift */,
 				9E6C24E820C1DACA003C85C0 /* RateStarView.swift */,
+				9E6C24EE20C1E219003C85C0 /* forecastCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				9E6C24E120C1D24C003C85C0 /* WeatherAPIHandler.swift in Sources */,
 				9E6C24DF20C1D1FC003C85C0 /* HotelAPIHandler.swift in Sources */,
 				9E6C24DB20C1CEA1003C85C0 /* WeatherInfo.swift in Sources */,
+				9E6C24EF20C1E219003C85C0 /* forecastCell.swift in Sources */,
 				9E6C24D720C1CB13003C85C0 /* MainViewController.swift in Sources */,
 				9E6C24DD20C1CEC1003C85C0 /* HotelInfo.swift in Sources */,
 				9E6C24D920C1CDC2003C85C0 /* HotelListTableViewController.swift in Sources */,

@@ -9,8 +9,18 @@
 import UIKit
 import CoreLocation
 
-class WeatherViewController: UIViewController, WeatherHandlerDelegate {
+class WeatherViewController: UIViewController, WeatherHandlerDelegate, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
+    // MARK: - IBOutlet
+    @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var conditionLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var temperatureUnitLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var windRateLabel: UILabel!
+    @IBOutlet var weatherCollectionView: UICollectionView!
     
     // MARK: - Class variables
     let weatherHandler = WeatherAPIHandler()
@@ -31,6 +41,20 @@ class WeatherViewController: UIViewController, WeatherHandlerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func setUpView()
+    {
+        let weather = weatherArray[0]
+        cityLabel.text = weather.city
+        dayLabel.text = weather.day
+        conditionLabel.text = weather.condition
+        temperatureLabel.text = weather.temperature
+        temperatureUnitLabel.text = weather.temperatureUnit == unit.celsius ? "°C" : "°K"
+        humidityLabel.text = weather.humidity
+        windRateLabel.text = weather.windRate
+        weatherImage.image = UIImage(named: weather.weatherImage)!
+        
+    }
+    
 
     @objc func addTapped() {
         weatherHandler.getResultsFromAPI(location: userLocation!)
@@ -46,5 +70,27 @@ class WeatherViewController: UIViewController, WeatherHandlerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    // MARK: - Collectionview delegate
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return weatherArray.count > 6 ? 5 : weatherArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! forecastCell
+        let weather = self.weatherArray[indexPath.row + 1]
+        cell.configure(weather: weather)
+        
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfCell: CGFloat = 5   //you need to give a type as CGFloat
+        let cellWidth = UIScreen.main.bounds.size.width / numberOfCell
+        return CGSize(width: cellWidth, height: cellWidth)
+    }
 
 }

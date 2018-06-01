@@ -18,7 +18,9 @@ extension WeatherViewController {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        self.weatherArray = array;        
+        self.weatherArray = array;
+        self.weatherCollectionView.reloadData()
+        setUpView()
     }
     
     func errorInFetchingWeather(error: Error){
