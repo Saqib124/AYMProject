@@ -7,46 +7,62 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HotelListTableTableViewController: UITableViewController {
+class HotelListTableViewController: UITableViewController, HotelHandlerDelegate {
 
     // MARK: - Class objects
     let tableCellIdentifier = "hotelCell"
     var hotelsArray: [HotelInfo] = []
+    let hotelHandler = HotelAPIHandler()
+    var userLocation:CLLocationCoordinate2D?
     
     // MARK: - controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "NearBy Restaurant"
+        
+        hotelHandler.delegate = self
+        hotelHandler.getResultsFromAPI(location: userLocation!)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(addTapped))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func addTapped() {
+        hotelHandler.getResultsFromAPI(location: userLocation!)
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath ) -> CGFloat{
+        return 100.0
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return hotelsArray.count > 3 ? 3 : hotelsArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! HotelInfoTableViewCell
+        
+        let hotel = self.hotelsArray[indexPath.row]
+        cell.configure(hotel: hotel)
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -40,6 +40,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "RestSegue"{
             print("RestSegue")
+            let destinationVC = segue.destination as! HotelListTableViewController
+            destinationVC.userLocation = userLocation
         }
         else if segue.identifier == "WeatherSegue" {
             print("WeatherSegue")
