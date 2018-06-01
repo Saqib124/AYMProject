@@ -26,8 +26,12 @@ class HotelListTableViewController: UITableViewController, HotelHandlerDelegate 
         hotelHandler.getResultsFromAPI(location: userLocation!)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(addTapped))
+        navigationController?.navigationBar.barTintColor = UIColor.init(red: 64/255, green: 119/255, blue: 182/255, alpha: 1.0)
+        
+        self.tableView.allowsSelection = false;
+        self.tableView.separatorColor = UIColor.clear
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -34,8 +34,18 @@ class WeatherViewController: UIViewController, WeatherHandlerDelegate, UICollect
         weatherHandler.delegate = self
         weatherHandler.getResultsFromAPI(location: userLocation!)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(addTapped))
+        navigationController?.navigationBar.barTintColor = UIColor.init(red: 250/255, green: 217/255, blue: 180/255, alpha: 1.0)
+        
+        let numberOfCell: CGFloat = 5   //you need to give a type as CGFloat
+        let cellWidth = UIScreen.main.bounds.size.width / numberOfCell
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: cellWidth/numberOfCell, height: cellWidth)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        weatherCollectionView!.collectionViewLayout = layout
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

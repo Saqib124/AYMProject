@@ -20,9 +20,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Main Menu"
+        
         startLocationServices()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(addTapped))
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.navigationBar.barTintColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {

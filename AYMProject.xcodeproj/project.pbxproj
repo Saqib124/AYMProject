@@ -139,9 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				9E6C24D220C1CAE2003C85C0 /* WeatherViewController.swift */,
-				9E6C24EC20C1E071003C85C0 /* WeatherHandlerDelegate.swift */,
-				9E6C24D620C1CB13003C85C0 /* MainViewController.swift */,
 				9E6C24D820C1CDC2003C85C0 /* HotelListTableViewController.swift */,
+				9E6C24D620C1CB13003C85C0 /* MainViewController.swift */,
+				9E6C24EC20C1E071003C85C0 /* WeatherHandlerDelegate.swift */,
 				9E6C24E220C1D308003C85C0 /* MainViewLocationDelegate.swift */,
 				9E6C24E420C1D72E003C85C0 /* HotelHanlderDelegate.swift */,
 			);
