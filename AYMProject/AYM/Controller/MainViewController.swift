@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreLocation
 class MainViewController: UIViewController {
 
     override func viewDidLoad() {
