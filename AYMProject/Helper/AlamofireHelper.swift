@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 
-class AlamofireHelper: NSObject {
+class AlamofireHelper {
     
     /*
      GET URL call with Alamofire and response object will be return to a success or failure closure/block respectively

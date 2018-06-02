@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class WeatherViewController: UIViewController, WeatherHandlerDelegate, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class WeatherViewController: UIViewController {
 
     // MARK: - IBOutlet
     @IBOutlet weak var weatherImage: UIImageView!
@@ -31,11 +31,60 @@ class WeatherViewController: UIViewController, WeatherHandlerDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Weather broadcast"
-        weatherHandler.delegate = self
+        weatherHandler.delegate = self as WeatherHandlerDelegate
         weatherHandler.getResultsFromAPI(location: userLocation!)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(addTapped))
         navigationController?.navigationBar.barTintColor = UIColor.init(red: 250/255, green: 217/255, blue: 180/255, alpha: 1.0)
+        setupCollectionView()
+    }
+    
+    func setUpView(){
+        let weather = weatherArray[0]
+        cityLabel.text = weather.city
+        dayLabel.text = weather.day
+        conditionLabel.text = weather.condition
+        temperatureLabel.text = weather.temperature
+        temperatureUnitLabel.text = weather.temperatureUnit == Unit.celsius ? "°C" : "°K"
+        humidityLabel.text = weather.humidity
+        windRateLabel.text = weather.windRate
+        weatherImage.image = UIImage(named: weather.weatherImage)!
         
+    }
+    
+    @objc func addTapped() {
+        weatherHandler.getResultsFromAPI(location: userLocation!)
+    }
+}
+
+
+// MARK: Extension for weather handler delegate
+extension WeatherViewController: WeatherHandlerDelegate {
+    
+    func getTheWeather(array: Array<WeatherInfo>){
+        if array.count == 0 {
+            let alert = UIAlertController(title: "Alert", message: "Array count is zero", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        self.weatherArray = array;
+        self.weatherCollectionView.reloadData()
+        setUpView()
+    }
+    
+    func errorInFetchingWeather(error: Error){
+        let alert = UIAlertController(title: "Error Alert", message: "Error in fetching the records, please refresh the screen", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: Extension for colletionView delegate
+extension WeatherViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    
+    func setupCollectionView(){
         let numberOfCell: CGFloat = 5   //you need to give a type as CGFloat
         let cellWidth = UIScreen.main.bounds.size.width / numberOfCell
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -46,55 +95,16 @@ class WeatherViewController: UIViewController, WeatherHandlerDelegate, UICollect
         weatherCollectionView!.collectionViewLayout = layout
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func setUpView()
-    {
-        let weather = weatherArray[0]
-        cityLabel.text = weather.city
-        dayLabel.text = weather.day
-        conditionLabel.text = weather.condition
-        temperatureLabel.text = weather.temperature
-        temperatureUnitLabel.text = weather.temperatureUnit == unit.celsius ? "°C" : "°K"
-        humidityLabel.text = weather.humidity
-        windRateLabel.text = weather.windRate
-        weatherImage.image = UIImage(named: weather.weatherImage)!
-        
-    }
-    
-
-    @objc func addTapped() {
-        weatherHandler.getResultsFromAPI(location: userLocation!)
-    }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
     // MARK: - Collectionview delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return weatherArray.count > 6 ? 5 : weatherArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! forecastCell
         let weather = self.weatherArray[indexPath.row + 1]
         cell.configure(weather: weather)
-        
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -102,5 +112,5 @@ class WeatherViewController: UIViewController, WeatherHandlerDelegate, UICollect
         let cellWidth = UIScreen.main.bounds.size.width / numberOfCell
         return CGSize(width: cellWidth, height: 107)
     }
-
 }
+

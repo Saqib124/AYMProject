@@ -21,10 +21,4 @@ class forecastCell: UICollectionViewCell {
         print(weather.weatherImage)
         perviewImage.image = UIImage(named: weather.weatherImage)!
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
 }

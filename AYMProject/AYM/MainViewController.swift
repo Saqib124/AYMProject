@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-class MainViewController: UIViewController, CLLocationManagerDelegate {
+class MainViewController: UIViewController {
 
     // MARK: - class objects
     let locationMgr = CLLocationManager()
@@ -31,13 +31,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         super.viewWillAppear(true)
         navigationController?.navigationBar.barTintColor = UIColor.white
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     
     // MARK: - Navigation
 
@@ -60,17 +53,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     //    MARK: - button actions
     @IBAction func hotelInfoButtonClicked(_ sender: UIButton) {
-        guard let _:CLLocationCoordinate2D = userLocation else{
-            let alert = UIAlertController(title: "Unable to get user location", message: "Please refresh the screen", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
-            return
-        }
-        self .performSegue(withIdentifier: "RestSegue", sender: self)
+        self.performeSegueNavigation(withIdentifier:"RestSegue" , self)
     }
     
     @IBAction func weatherInfoButtonClicked(_ sender: Any) {
+        self.performeSegueNavigation(withIdentifier:"WeatherSegue" , self)
+    }
+    
+    func performeSegueNavigation(withIdentifier identifier: String, _ sender: Any){
         guard let _:CLLocationCoordinate2D = userLocation else{
             let alert = UIAlertController(title: "Unable to get user location", message: "Please refresh the screen", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -78,7 +68,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             present(alert, animated: true, completion: nil)
             return
         }
-        self .performSegue(withIdentifier: "WeatherSegue", sender: self)
+        self .performSegue(withIdentifier:identifier , sender: self)
     }
     
     @objc func addTapped() {
@@ -87,3 +77,42 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
 
 }
+
+
+
+extension MainViewController: CLLocationManagerDelegate {
+    
+    //    MARK: - loaction setup
+    func startLocationServices(){
+        locationMgr.requestAlwaysAuthorization()
+        status  = CLLocationManager.authorizationStatus()
+        if status == .denied || status == .restricted {
+            let alert = UIAlertController(title: "Location Services Disabled", message: "Please enable Location Services in Settings", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        if CLLocationManager.locationServicesEnabled(){
+            locationMgr.delegate = self
+            locationMgr.startUpdatingLocation()
+        }
+    }
+    
+    
+    //    MARK: - loaction delegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {
+            return
+        }
+        userLocation = locValue
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        locationMgr.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
+    }
+    
+}
+
